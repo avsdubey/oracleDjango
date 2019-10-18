@@ -1,0 +1,1 @@
+.row-no-padding>[class*=col-]{padding-left:0!important;padding-right:0!important}.form-control{font-size:16px}@font-face{font-family:custom-glyphicons;src:url(../fonts/custom-glyphicons.ttf) format('truetype')}.glyphicon.glyphicon-dnd{font-family:custom-glyphicons}.glyphicon.glyphicon-dnd::before{content:'a'}

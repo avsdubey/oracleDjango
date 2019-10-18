@@ -1,0 +1,82 @@
+//*******************************************************************************
+// Copyright(c) 2017 by
+// Diamond Resorts International(r)
+// All rights reserved
+//*******************************************************************************
+// NAME:        styles-less\resorts_mgmt.less
+// DESCRIPTION: Styles file for the Main page
+// REVISIONS:
+// Date          Ticket  Author          Description
+// -----------   ------  --------------  ----------------------------------------
+// 11-Apr-2017   45770   DYashchenko     Created
+//*******************************************************************************
+@import "common/base.less";
+
+.bootstrap-carousel-customize();
+
+aside .menu-block .menu-item, aside .menu-block .menu-icon, .content {
+    -webkit-box-shadow: 0 0 7px 1px fade(@color-black, 30%);
+    -moz-box-shadow:    0 0 7px 1px fade(@color-black, 30%);
+    box-shadow:         0 0 7px 1px fade(@color-black, 30%);
+}
+
+aside {
+    .menu-block {
+        position: relative;
+        margin: 10px 0 50px;
+        
+        .menu-item {
+            background-color: #f9efe9;
+            border-radius: 8px;
+            margin: 10px 0 30px 70px;
+            padding: 0 0 0 35px;
+            min-height: 70px;
+            
+            a {
+                font-size: 20px;
+                font-weight: bold;
+                padding: 21px 0;
+                color: #053963;
+                display: block;
+            }
+        }
+        .menu-icon {
+            background-color: @color-weathered-white;
+            padding: 20px;
+            width: 90px;
+            height: 90px;
+            overflow: hidden;
+            border-radius: 45px 45px 0 45px;
+            position: absolute;
+            top: -10px;
+            font-size: 30px;
+            
+            span {
+                font-size: 53px;
+                color: @color-black;
+            }
+        }
+    }
+}
+.expanded-menu>.menu-data li {
+    margin:8px 0;
+    list-style: none;
+}
+    .expanded-menu>.menu-data li>a {
+        background-color: @color-light-blue;
+        padding:10px;
+        border-radius: 8px;
+        display:block;
+        color: @color-black;
+    }
+        .expanded-menu>.menu-data li.dropdown-submenu>a {
+            background-color: @color-medium-blue;
+            color: @color-white;
+        }
+
+
+h2 {
+    color: @color-white;
+    font-size: 26px;
+    margin-bottom: 20px;
+}

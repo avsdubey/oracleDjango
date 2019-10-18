@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resort</title>
+	{% load static %}
+
+{% block scripts %}
+    <script src="{% static 'scripts/lib/jquery-min.js' %}"></script>
+    <script src="{% static 'scripts/lib/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'scripts/lib/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'scripts/lib/bootstrap.min.js' %}"></script>
+    <script src="{% static 'scripts/lib/bootstrap-submenu.min.js' %}"></script>
+    <script src="{% static 'scripts/resorts/resorts_mgmt.js' %}"></script>
+{% endblock %}
+</head>
+<body>
+<h1>Resorts</h1>
+<table width="100%"  border="1">
+    <tr style="background-color:lightgray">
+        <th>Resort ID</th>
+        <th>Resort Desc</th>
+        <th>Reversal</th>
+        <th>Active</th>
+    </tr>
+    {% for resort in resorts %}
+    <tr>
+	   <td>{{resort.resort_id}}</td>
+	   <td>{{resort.resort_desc }}</td>
+	   <td>{{resort.transfer_reversal}}</td>
+	   <td>{{resort.active}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<div class="resorts_management">
+  <h2 class="text-white" style="margin-top:100px" align="center">Resorts Management</h2>
+	<form id="resortsFrm" align="center" style="width:100%">
+	    <table align="center">
+		  <tr>
+			<td style="width:80px">Resort ID:</td>
+			<td style="width:150px"><input id="resort_id"  style="margin-right:20px" placeholder="Enter Resort ID" name="p_resort_id" type="text"></td>
+			<td style="width:150px">Resort Desc:</td>
+			<td style="width:150px"><input id="resort_desc"  style="margin-right:20px" placeholder="Enter Resort Desc" name="p_resort_desc" type="text"></td>
+		  </tr>
+		  <tr>
+			<td style="width:80px">Active:</td>
+			<td style="width:150px"><input id="active_input" maxlength="4" style="margin-right:20px" placeholder="Active" name="p_active_input" type="text"></td>
+			<td style="width:150px">Transfer Reversal:</td>
+			<td style="width:150px"><input id="transfer_reversal" maxlength="4" style="margin-right:20px" placeholder="Transfer Reversal" name="p_transfer_reversal" type="text"></td>
+		  </tr>
+		</table>
+	    <div align="center">
+			<button type="button" id="addButton" style="width:100px;background-color:rgba(5, 57, 99, 0.7);color:white">Add</button>
+			<button type="button" id="searchButton" style="width:100px;background-color:rgba(5, 57, 99, 0.7);color:white">Search</button>
+			<button type="button" id="resetButton" style="width:100px;background-color:rgba(5, 57, 99, 0.7);color:white">Reset</button>
+			<button type="button" id="updateButton" style="width:100px;background-color:rgba(5, 57, 99, 0.7);color:white">Update</button>
+	    </div>
+	</form>
+</div>
+
+</body>
+</html>

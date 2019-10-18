@@ -1,0 +1,56 @@
+//*******************************************************************************
+// Copyright(c) 2017 by
+// Diamond Resorts International(r)
+// All rights reserved
+//*******************************************************************************
+// NAME:        styles-less\common\components\switcher-checkbox.less
+// DESCRIPTION: checkbox styled to look as switcher
+// REVISIONS:
+// Date          Ticket  Author          Description
+// -----------   ------  --------------  ----------------------------------------
+// 08-Jun-2017   45770   DYashchenko     Created
+//*******************************************************************************
+//Sample markup:
+//<label class="switcher-checkbox" for="switcherCheckbox">
+//    <input type="checkbox" id="switcherCheckbox">
+//    <div class="bar"></div>
+//    <div class="indicator"></div>
+//</label>
+
+.switcher-checkbox {
+    position:relative;
+    height:30px;
+    width:60px;
+}
+    .switcher-checkbox .bar {
+        content:"";
+        position:absolute;
+        top:0;
+        right:0;
+        bottom:0;
+        left:0;
+        border-radius:15px;
+        background:@color-light-cream;
+        transition:all 0.3s;
+    }
+    .switcher-checkbox .indicator {
+        content:"";
+        position:absolute;
+        left:1px;
+        top:1px;
+        width:28px;
+        height:28px;
+        border-radius:14px;
+        background:@color-white;
+        box-shadow:0 0 2px 0 fade(@color-black, 30%);
+        transition:all 0.3s;
+    }
+    .switcher-checkbox input {
+        visibility:hidden;
+    }
+    .switcher-checkbox input:checked ~ .indicator {
+        left:31px;
+    }
+    .switcher-checkbox input:checked ~ .bar {
+        background:@color-medium-blue;
+    }

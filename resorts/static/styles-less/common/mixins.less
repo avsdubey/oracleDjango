@@ -1,0 +1,63 @@
+//*******************************************************************************
+// Copyright(c) 2017 by
+// Diamond Resorts International(r)
+// All rights reserved
+//*******************************************************************************
+// NAME:        styles-less\common\mixins.less
+// DESCRIPTION: Less file with custom Less mixins
+// REVISIONS:
+// Date          Ticket  Author          Description
+// -----------   ------  --------------  ----------------------------------------
+// 11-Apr-2017   45770   DYashchenko     Created
+//*******************************************************************************
+
+
+/* LESS mixins, assuming this file will be included after palette.less */
+
+.bootstrap-carousel-customize() {
+    /* images carousel custom styles (override Bottstrap's defaults) */
+    section .carousel-caption {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 50%;
+        padding: 0;
+    }
+
+        section .carousel-caption .carousel-caption-inner {
+            display: table;
+            width: 100%;
+            height: 100%;
+        }
+            section .carousel-caption .carousel-caption-inner .carousel-caption-inner-wrapper {
+                display: table-cell;
+                vertical-align: middle;
+            }
+                section .carousel-caption .carousel-caption-inner .carousel-caption-inner-wrapper .carousel-caption-content {
+                    background-color: fade(@color-black, 65%);
+                    padding: 10px 10px 30px 40px;
+                    color: @color-white;
+                }
+                    section .carousel-caption .carousel-caption-inner .carousel-caption-inner-wrapper .carousel-caption-content h3 {
+                        color: @color-white;
+                    }
+
+    section .carousel-indicators {
+        position: absolute;
+        bottom: 0;
+        z-index: 15;
+        text-align: center;
+        list-style: none;
+        font-size: 300%;
+    }
+
+    section .carousel .carousel-image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.border-radius(@radius: 4px) {
+    border-radius: @radius;
+}

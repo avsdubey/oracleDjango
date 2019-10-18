@@ -1,0 +1,34 @@
+//*******************************************************************************
+// Copyright(c) 2017 by
+// Diamond Resorts International(r)
+// All rights reserved
+//*******************************************************************************
+// NAME:        styles-less\common\components\bootstrap-extensions.less
+// DESCRIPTION: Less file for any pages with Bootstrap. NOTE: any Bootstrap customizations should be placed in this file
+// REVISIONS:
+// Date          Ticket  Author          Description
+// -----------   ------  --------------  ----------------------------------------
+// 11-Apr-2017   45770   DYashchenko     Created
+//*******************************************************************************
+
+// bootstrap extensions
+.row-no-padding > [class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.form-control {
+    font-size:16px;
+}
+
+
+// additional glyphicons
+@font-face {
+    font-family: 'custom-glyphicons';
+    src: url('../fonts/custom-glyphicons.ttf') format('truetype');
+}
+.glyphicon.glyphicon-dnd {
+    font-family:'custom-glyphicons';
+}
+.glyphicon.glyphicon-dnd::before {
+    content:'a';
+}

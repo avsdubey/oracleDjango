@@ -1,0 +1,390 @@
+//*******************************************************************************
+// Copyright(c) 2017 by
+// Diamond Resorts International(r)
+// All rights reserved
+//*******************************************************************************
+// NAME:        styles-less\common\base.less
+// DESCRIPTION: Common Less file for all pages
+// REVISIONS:
+// Date          Ticket  Author          Description
+// -----------   ------  --------------  ----------------------------------------
+// 11-Apr-2017   45770   DYashchenko     Created
+// 04-Sep-2017   50581   KArtemov        Fixed footer padding for small devices
+//*******************************************************************************
+
+@import "palette.less";
+@import "mixins.less";
+
+@import (inline) "../lib/bootstrap.min.css";
+@import (inline) "../lib/bootstrap-submenu.min.css";
+@import "components/bootstrap-extensions.less";
+
+
+html {
+    font-family: 'Questrial', 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    color: @color-charred;
+    margin-bottom: 120px;
+    background: @color-dark-blue url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Questrial', 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    width: 100%;
+}
+
+body.loading::after {
+    content:"";
+    display:block;
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+
+    background:fade(@color-white, 70%) url("../images/logo.svg") no-repeat center center;
+    background-size:100px auto;
+    z-index:22;
+}
+
+
+header, nav, footer, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Questrial', 'Source Sans Pro', sans-serif;
+}
+h1 {
+    font-size: 28px;
+    color: @color-dark-blue;
+}
+
+h2 {
+    font-size: 26px;
+    color: @color-medium-blue;
+}
+
+h3 {
+    font-size: 24px;
+    color: @color-canyon-dusk;
+}
+
+h4 {
+    font-size: 22px;
+    color: @color-canyon-dusk;
+}
+
+h5 {
+    font-size: 20px;
+    color: @color-gray;
+}
+
+h6 {
+    font-size: 18px;
+    color: @color-warm-grey;
+}
+
+a, a:hover, a:active, a:focus {
+    color: @color-medium-blue;
+}
+
+button.cly-btn-blue, button.cly-btn-dusk {
+    border: 0;
+    .border-radius(8px);
+    height: 45px;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+button.cly-btn-blue:focus, button.cly-btn-blue:active, button.cly-btn-blue:focus:active, button.cly-btn-dusk:focus, button.cly-btn-dusk:active, button.cly-btn-dusk:focus:active    {
+    -webkit-box-shadow: 0 0 10px 3px fade(@color-black, 30%);
+    -moz-box-shadow:    0 0 10px 3px fade(@color-black, 30%);
+    box-shadow:         0 0 10px 3px fade(@color-black, 30%);
+    border: 0;
+}
+
+button.cly-btn-blue {
+    background-color: @color-light-blue;
+}
+    button.cly-btn-blue:hover {
+        background-color: @color-medium-blue; /*#2e6da0;*/
+    }
+    button.cly-btn-blue:focus, button.cly-btn-blue:active, button.cly-btn-blue:focus:active {
+        background-color: @color-medium-blue;
+    }
+
+button.cly-btn-dusk {
+    color: @color-charred;
+    background-color: @color-medium-cream;
+}
+    button.cly-btn-dusk:hover {
+        background-color: @color-lighter-cream; /*#977563;*/
+    }
+    button.cly-btn-dusk:focus, button.cly-btn-dusk:active, button.cly-btn-dusk:focus:active {
+        background-color: @color-lighter-cream; /*#977563;*/
+    }
+
+input, input.form-control {
+    .border-radius(8px);
+}
+
+.logo-container-outer {
+    position: absolute;
+    left:50%;
+    margin-left:-80px;
+    text-align:center;
+    width:160px;
+    z-index: 20;
+}
+    .logo-container-outer a {
+        display:block;
+    }
+    .logo-container-inner img {
+        width:100%;
+    }
+@media (max-width: 667px) {
+    .logo-container-outer {
+        width:90px;
+        margin-left:-45px;
+    }
+}
+@media (min-width: 668px) and (max-width: 1024px) {
+    .logo-container-outer {
+        width:136px;
+        margin-left:-68px;
+    }
+}
+
+header {
+    background: linear-gradient(transparent, @color-medium-blue);
+
+    a, a:hover, a:active, a:focus {
+        color: @color-weathered-white;
+    }
+    .vertical-divider {
+        border-left:  1px solid @color-charred; 
+        border-right: 1px solid @color-medium-blue;
+        margin: 0 15px;
+        height: 20px;
+    }
+    .toolbar {
+        height: 50px;
+        color: @color-weathered-white;
+        
+        a.blue {
+            color: @color-light-blue;
+        }
+        .toolbar-left {
+            padding: 15px 0;
+        }
+        .toolbar-left-xs {
+            padding: 5px 0;
+            
+            p {
+                margin: 0;
+            }
+        }
+        .toolbar-right {
+            text-align: right;
+            padding: 15px 0;
+            
+            .dropdown {
+                display: inline;
+            }
+        }
+        select {
+            background-color: transparent;
+            border: 0;
+            max-width: 70%;
+            
+            option {
+                background-color: @color-dark-blue;
+                border: 0;
+            }
+        }
+
+        @media (min-width: 668px) {
+        select {
+            max-width: 30%;
+        }
+        }
+    }
+}
+.logout-nav {
+    margin-right: 7px;
+}
+
+@media (min-width: 800px) and (max-width:991px) {
+    .navbar-collapse ul.nav>li>a, .navbar-collapse ul.nav>li>a:hover, .navbar-collapse ul.nav>li>a:focus, .navbar-collapse ul.nav>li>a:active {
+        padding: 15px 10px;
+    }
+}
+@media (min-width: 768px) and (max-width:991px) {
+    .navbar-collapse ul.nav>li>a, .navbar-collapse ul.nav>li>a:hover, .navbar-collapse ul.nav>li>a:focus, .navbar-collapse ul.nav>li>a:active {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-collapse ul.nav>li>a, .navbar-collapse ul.nav>li>a:hover, .navbar-collapse ul.nav>li>a:focus, .navbar-collapse ul.nav>li>a:active {
+        margin: 0 12px;
+    }
+}
+
+.navbar {
+    margin: 0;
+    background-color: @color-muted-sunshine;
+    font-family: 'Questrial', 'Source Sans Pro', sans-serif;
+
+    .container {
+        height: auto;
+        min-height: 50px;
+        color: @color-dark-blue;
+        
+        a {
+            color: @color-dark-blue;
+        }
+    }
+    ul li.divider-top {
+        border-left:1px solid fade(@color-warm-grey, 50); 
+        border-right:1px solid @color-weathered-white;
+        margin: 5px 0;
+        padding: 0;
+        height: 40px;
+    }
+}
+.nav>li a, .navbar-default .navbar-nav>.open>a {
+    color: @color-dark-blue;
+    font-size: 18px;
+}
+.navbar-default .navbar-nav li.open>a, .navbar-default .navbar-nav li.open>a:hover, .navbar-default .navbar-nav li.open>a:focus,
+.nav li.open>a, .nav li.open>a:focus, .nav li.open>a:hover
+{
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.navbar-collapse ul.nav.navbar-left>li:first-child>a {
+    padding-left: 0;
+    margin-left: 0;
+}
+.navbar-collapse ul.nav.navbar-right>li:last-child>a {
+    padding-right: 0;
+    margin-right: 0;
+}
+
+
+.dropdown-menu {
+    background-color: @color-weathered-white;
+    width: 100%;
+    padding: 0 10px;
+    .border-radius(10px);
+    min-width: 250px;
+}
+    .dropdown-menu>li, .nav.navbar-nav.sm-collapsible li {
+        margin: 0 10px;
+        border-bottom: 1px solid fade(@color-warm-grey, 50);
+    }
+    .dropdown-menu>li:last-child, .nav.navbar-nav.sm-collapsible .dropdown-menu li:last-child {
+        border: 0;
+    }
+        .dropdown-menu>li>a {
+            padding: 15px 15px 15px 0;
+        }
+
+section {
+    margin-bottom: 20px;
+}
+
+.content {
+    background-color: @color-weathered-white;
+    .border-radius(8px);
+    padding: 20px;
+    margin-top:10px;
+}
+
+footer {
+    text-align: center;
+    background-color: fade(@color-dark-blue, 70%);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    padding: 30px 0;
+    color: @color-weathered-white;
+}
+
+@media (max-width: 668px) {
+    footer {
+        padding: 12px 0;
+    }
+}
+/* Styling Bootstrap Tooltip */
+.tooltip.top .tooltip-arrow {
+    border-top-color: @color-weathered-white;
+}
+.tooltip.right .tooltip-arrow {
+    border-right-color: @color-weathered-white;
+}
+.tooltip.bottom .tooltip-arrow {
+    border-bottom-color: @color-weathered-white;
+}
+.tooltip.left .tooltip-arrow {
+    border-left-color: @color-weathered-white;
+}
+.tooltip-inner {
+    background-color: @color-weathered-white;
+    color: @color-charred;
+    padding: 7px;
+    max-width: 400px;
+    white-space: nowrap;
+    font-size: 16px;
+}
+.popover {
+    background-color: @color-weathered-white;
+}
+.popover.top .arrow:after {
+    border-top-color: @color-weathered-white;
+}
+.popover.right .arrow:after {
+    border-right-color: @color-weathered-white;
+}
+.popover.bottom .arrow:after {
+    border-bottom-color: @color-weathered-white;
+}
+.popover.left .arrow:after {
+    border-left-color: @color-weathered-white;
+}
+.popover-content {
+    background-color: @color-weathered-white;
+    color: @color-charred;
+    padding: 7px;
+    /*max-width: 400px;
+    white-space: nowrap;*/
+    font-size: 16px;
+}
+
+.ellipsis {
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.sticky.sticky-enabled {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:3;
+    margin:0 0 30px 0;
+    box-shadow:0 0 5px fade(@color-black, 80%);
+    width:auto;
+}
+button.transparent {
+    background:transparent;
+}
+
+.smallfont {
+    font-size: 80%;
+}
